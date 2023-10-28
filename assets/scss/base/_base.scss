@@ -1,0 +1,90 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+body.overflow_hidden {
+    overflow: hidden;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+u {
+    text-decoration: underline;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+    color: currentColor;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: transparent;
+    border: unset;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input {
+    font-size: 14px;
+}
+.dateclass {
+    width: 100%;
+}
+
+.dateclass.placeholderclass::before {
+    width: 100%;
+    content: attr(placeholder);
+    font-size: 14px;
+}
+
+// .dateclass.placeholderclass:hover::before {
+//     width: 0%;
+//     content: "";
+// }
+
+@media (min-width: 1440px) {
+    body {
+        zoom: 120%;
+    }
+}
