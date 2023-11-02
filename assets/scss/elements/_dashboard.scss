@@ -41,6 +41,9 @@
     .site_logo {
         padding: 40px 30px;
         display: block;
+        img {
+            width: 110px;
+        }
     }
     .select_date {
         width: 100%;
@@ -227,6 +230,18 @@
                 top: 25px;
                 padding: 0;
                 z-index: 2;
+                &.active{
+                    svg {
+                        path {
+                            fill: var(--orange);
+                        }
+                    }
+                }
+                &:hover{
+                    svg {
+                        transform: scale(1.05);
+                    }
+                }
             }
             .bottom {
                 text-align: center;

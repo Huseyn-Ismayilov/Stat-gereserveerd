@@ -14,7 +14,7 @@
         <section class="dashboard dashboard0">
             <div class="sidebar">
                 <a href="./index.html" class="site_logo">
-                    <img src="../images/logo.svg" alt="">
+                    <img src="../images/logo-light.png" alt="">
                 </a>
                 <ul class="menu">
                     <li class="nav_item">
@@ -125,10 +125,10 @@
                 <div class="tabs main">
                     <ul class="tab-nav">
                         <li class="active">
-                            <span data-href="#tab-11">Coupons</span>
+                            <span data-href="#tab-11">My invoices</span>
                         </li>
                         <li>
-                            <span data-href="#tab-21">Gift Cards</span>
+                            <span data-href="#tab-21">My offers</span>
                         </li>
                     </ul>
                     <div class="tab active" id="tab-11">
@@ -162,7 +162,7 @@
                                     class="dateclass placeholderclass">
                             </div>
                         </div>
-                        <div class="invoices">
+                        <div class="invoices my_invoices">
                             <table>
                                 <thead>
                                     <tr>
@@ -459,7 +459,7 @@
                                     class="dateclass placeholderclass">
                             </div>
                         </div>
-                        <div class="invoices">
+                        <div class="invoices my_offers">
                             <table>
                                 <thead>
                                     <tr>
@@ -653,7 +653,124 @@
 
             </div>
         </section>
-        <div class="modal invoice">
+        <div class="modal invoice my_invoices">
+            <div class="inner">
+                <div class="top">
+                    <div class="left">
+                        <div class="logo">
+                            <img src="../images/logo-example.png" width="102" alt="">
+                        </div>
+                        <div>
+                            <h4>Invoice to:</h4>
+                            <h3>John Doe</h3>
+                            <p>Address, location, <br> apartament</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="top_bar">
+                            <button type="button" class="down_btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.625 9.875V12.375C13.625 12.7065 13.4933 13.0245 13.2589 13.2589C13.0245 13.4933 12.7065 13.625 12.375 13.625H3.625C3.29348 13.625 2.97554 13.4933 2.74112 13.2589C2.5067 13.0245 2.375 12.7065 2.375 12.375V9.875"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4.875 6.75L8 9.875L11.125 6.75" stroke="black" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8 9.875V2.375" stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button type="button" class="close_btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.6668 14.6668L1.3335 1.3335M14.6668 1.3335L1.3335 14.6668"
+                                        stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="info">
+                            <p><strong>Offer #</strong> 51248</p>
+                            <p><strong>Date:</strong> 21 / 02 / 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>N.</th>
+                            <th>Item Description</th>
+                            <th>Price</th>
+                            <th>Qty. </th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Lorem Ipsum is simply</td>
+                            <td>$50.00</td>
+                            <td>1</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Lorem Ipsum is simply</td>
+                            <td>$50.00</td>
+                            <td>1</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Lorem Ipsum is simply</td>
+                            <td>$50.00</td>
+                            <td>1</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Lorem Ipsum is simply</td>
+                            <td>$50.00</td>
+                            <td>1</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="payment_info">
+                    <div class="left">
+                        <h4>Payment info:</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    </div>
+                    <div class="right">
+                        <div class="total">
+                            <ul>
+                                <li>
+                                    <span>Subtotal:</span>
+                                    <span>$220.00</span>
+                                </li>
+                                <li>
+                                    <span>Tax:</span>
+                                    <span>0.00%</span>
+                                </li>
+                                <li class="last">
+                                    <span>Total:</span>
+                                    <span>$220.00</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="foot"></div>
+            </div>
+        </div>
+        <div class="modal invoice offers">
             <div class="inner">
                 <div class="top">
                     <div class="left">
@@ -771,7 +888,7 @@
                 <div class="foot"></div>
             </div>
         </div>
-        <div class="popup settings">
+          <div class="popup settings">
             <div class="inner">
                 <div class="scroll">
                     <div class="head">
@@ -835,14 +952,10 @@
                                         <textarea name="" id="" placeholder="any notes"></textarea>
                                     </div>
                                     <div class="form_element">
-                                        <label for="">Phone</label>
-                                        <input type="text" placeholder="">
-                                    </div>
-                                    <div class="form_element">
                                         <label for="toggle1" class="checkbox">
                                             <input type="checkbox" id="toggle1" checked>
                                             <div class="inner">
-                                                <p>Include Buffer time in Outlook events</p>
+                                                <p>Allow to send me email</p>
                                                 <div class="toggle"></div>
                                             </div>
                                         </label>
@@ -874,7 +987,7 @@
                                                     <label for="toggle" class="checkbox">
                                                         <input type="checkbox" id="toggle" checked>
                                                         <div class="inner">
-                                                            <p>Include Buffer time in Outlook events</p>
+                                                            <p>Include Buffer time in Google events</p>
                                                             <div class="toggle"></div>
                                                         </div>
                                                     </label>

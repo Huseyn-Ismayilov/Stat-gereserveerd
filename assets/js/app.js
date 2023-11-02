@@ -6,8 +6,6 @@ $('.site_header .toggle, .mobile_menu .close_btn').click(function () {
 
 
 
-
-
 $('.tab-nav span').on('click', function () {
 	$([$(this).parent()[0], $($(this).data('href'))[0]]).addClass('active').siblings('.active').removeClass('active');
 });
@@ -77,7 +75,7 @@ var product_slider = new Swiper(".content_box .slider2", {
 
 
 $(document).click(function (event) {
-	if (!$(event.target).closest(".popup .inner").length) {
+	if (!$(event.target).closest(".popup .inner, .flatpickr-calendar").length) {
 		$("body").find(".popup .inner").parent().removeClass("opened");
 		$('.site_header .toggle').removeClass('opened');
 	}
@@ -85,10 +83,11 @@ $(document).click(function (event) {
 
 
 $(document).click(function (event) {
-	if (!$(event.target).closest(".popup .inner, .dashboard0 .invoices table tbody .sec_btn").length) {
+	if (!$(event.target).closest(".popup .inner, .dashboard0 .invoices table tbody .sec_btn, ").length) {
 		$("body").find(".modal.invoice > .inner").parent().removeClass("opened");
 	}
 });
+
 
 
 
@@ -108,7 +107,7 @@ $('.dashboard0 .list_items .inner .bottom a, .my_reviews.items_grid .review_item
 });
 
 $('.appointment_item .profile .details .details_btn').click(function () {
-	$('.modal.appointment_details').addClass('opened')
+	$('.modal.appointment_details.details0').addClass('opened')
 	return false
 });
 
@@ -121,6 +120,14 @@ $('.popup .head .close_btn').click(function () {
 	$(this).parents().eq(3).removeClass('opened');
 });
 
+$('.tab.coupons .appointment_item .details_btn').click(function () {
+	$('.modal.coupons').addClass('opened');
+	return false
+});
+$('.tab.active_coupons .appointment_item .details_btn').click(function () {
+	$('.modal.active_coupons').addClass('opened');
+	return false
+});
 
 $('.popup.book_appointment .service_items .item .arrow').click(function () {
 	$(this).toggleClass('opened')
@@ -141,6 +148,10 @@ $('.popup.book_appointment .select_services .date_item').click(function () {
 });
 
 // End
+
+
+
+
 $('.popup.book_appointment .body_inner .back_btn').click(function () {
 	$(this).parents().eq(1).removeClass('opened')
 });
@@ -167,11 +178,21 @@ $('.modal.cancel .btn').click(function () {
 });
 
 
-$('.dashboard0 .invoices table tbody .sec_btn').click(function () {
-	$('.modal.invoice').addClass('opened')
+$('.dashboard0 .my_invoices.invoices table tbody .sec_btn').click(function () {
+	$('.modal.my_invoices').addClass('opened')
+});
+
+$('.dashboard0 .my_offers.invoices table tbody .sec_btn').click(function () {
+	$('.modal.offers').addClass('opened')
 });
 
 // 
+
+
+$('.select_date .bottom .next_btn').click(function () {
+	$('.modal.appointment_booked').addClass('opened')
+	$('.popup.book_appointment').removeClass('opened')
+});
 
 const dropArea = document.querySelector(".drop_box"),
 	button = dropArea.querySelector("button"),
@@ -198,4 +219,32 @@ input.addEventListener("change", function (e) {
 });
 
 // 
+
+
+
+$('.dashboard0 .list_items .inner .favorite_btn').click(function () {
+	$(this).toggleClass('active')
+});
+
+
+
+
+
+const starEls = document.querySelectorAll('.star.rating');
+starEls.forEach(star => {
+	star.addEventListener('click', function (e) {
+		let starEl = e.currentTarget;
+		console.log(starEl.parentNode.dataset.stars + ", " + starEl.dataset.rating);
+		starEl.parentNode.setAttribute('data-stars', starEl.dataset.rating);
+	});
+})
+
+
+
+const datePickerRef = document.querySelector('[data-date-picker]');
+window.CarbonComponents.DatePicker.init(datePickerRef);
+const datePicker = window.CarbonComponents.DatePicker.components.get(datePickerRef);
+
+datePicker.calendar.set('clicksOpen', 'false');
+datePicker.calendar.open();
 

@@ -80,11 +80,6 @@ input {
   font-size: 14px;
 }
 
-@media (min-width: 1440px) {
-  body {
-    zoom: 120%;
-  }
-}
 .container {
   width: 100%;
   margin: 0 auto;
@@ -131,6 +126,7 @@ input {
   font-size: 18px;
   font-weight: 700;
   padding: 10px 25px;
+  gap: 6px;
   width: -moz-fit-content;
   width: fit-content;
   font-family: "Gotham";
@@ -963,6 +959,9 @@ button.swiper-pagination-bullet {
   padding: 40px 30px;
   display: block;
 }
+.dashboard0 .site_logo img {
+  width: 110px;
+}
 .dashboard0 .select_date {
   width: 100%;
   max-width: 160px;
@@ -1132,6 +1131,12 @@ button.swiper-pagination-bullet {
   top: 25px;
   padding: 0;
   z-index: 2;
+}
+.dashboard0 .list_items .inner .favorite_btn.active svg path {
+  fill: var(--orange);
+}
+.dashboard0 .list_items .inner .favorite_btn:hover svg {
+  transform: scale(1.05);
 }
 .dashboard0 .list_items .inner .bottom {
   text-align: center;
@@ -1658,7 +1663,7 @@ textarea {
 }
 .popup.book_appointment .body_inner .scroll {
   overflow-y: auto;
-  min-height: calc(100vh - 61px);
+  padding-bottom: 110px;
 }
 .popup.book_appointment .body_inner .head {
   display: flex;
@@ -1855,6 +1860,11 @@ textarea {
   background-color: var(--orange);
   color: white;
 }
+.popup.book_appointment .select_date .d_none {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
 .popup.book_appointment .select_date .calendar_month .pag {
   display: flex;
   align-items: center;
@@ -1929,6 +1939,38 @@ textarea {
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 8px;
+}
+.popup.add_review .title .stars {
+  cursor: pointer;
+  display: flex;
+  gap: 6px;
+}
+.popup.add_review .title .stars:hover .star polygon {
+  fill: #ffd055 !important;
+}
+.popup.add_review .title .stars .star polygon {
+  fill: #d8d8d8;
+}
+.popup.add_review .title .stars .star:hover ~ .star polygon {
+  fill: #d8d8d8 !important;
+}
+.popup.add_review .title .stars[data-stars] .star polygon {
+  fill: #ffd055;
+}
+.popup.add_review .title .stars[data-stars="1"] .star:nth-child(1) ~ .star polygon {
+  fill: #d8d8d8;
+}
+.popup.add_review .title .stars[data-stars="2"] .star:nth-child(2) ~ .star polygon {
+  fill: #d8d8d8;
+}
+.popup.add_review .title .stars[data-stars="3"] .star:nth-child(3) ~ .star polygon {
+  fill: #d8d8d8;
+}
+.popup.add_review .title .stars[data-stars="4"] .star:nth-child(4) ~ .star polygon {
+  fill: #d8d8d8;
+}
+.popup.add_review .title .stars[data-stars="5"] .star:nth-child(5) ~ .star polygon {
+  fill: #d8d8d8;
 }
 .popup.add_review .form_wrap .form_element:not(:last-child) {
   margin-bottom: 30px;
@@ -2043,6 +2085,12 @@ textarea {
   transform: translateX(0);
 }
 
+.flatpickr-calendar {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
 .tab {
   display: none;
 }
@@ -2064,6 +2112,7 @@ textarea {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   opacity: 0;
+  padding: 0 16px;
   visibility: hidden;
   transition: 0.1s;
 }
@@ -2124,31 +2173,50 @@ textarea {
 .modal.appointment_details .appointment_item > .details .right {
   width: 60%;
 }
-.modal.appointment_details .appointment_item > .details .right ul {
+.modal.appointment_details .appointment_item > .details .head li span {
+  opacity: 0.5;
+  width: 100% !important;
+}
+.modal.appointment_details .appointment_item > .details .left {
+  width: 30%;
+}
+.modal.appointment_details .appointment_item > .details .left ul li {
+  flex-wrap: wrap;
+}
+.modal.appointment_details .appointment_item > .details .left ul span {
+  display: block;
+}
+.modal.appointment_details .appointment_item > .details ul {
   width: 100%;
 }
-.modal.appointment_details .appointment_item > .details .right ul li {
+.modal.appointment_details .appointment_item > .details ul li {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 3px 0;
 }
-.modal.appointment_details .appointment_item > .details .right ul li span {
+.modal.appointment_details .appointment_item > .details ul li p {
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+}
+.modal.appointment_details .appointment_item > .details ul li span {
+  font-size: 11px;
   opacity: 1;
   width: auto;
   font-weight: 400;
 }
-.modal.appointment_details .appointment_item > .details .right ul li span:first-child {
+.modal.appointment_details .appointment_item > .details ul li span:first-child {
   width: 45%;
   font-size: 12px;
   font-weight: 500;
 }
-.modal.appointment_details .appointment_item > .details .right ul li.last {
+.modal.appointment_details .appointment_item > .details ul li.last {
   border-top: 1px solid rgba(239, 72, 39, 0.1);
   margin-top: 11px;
   padding-top: 14px;
 }
-.modal.appointment_details .appointment_item > .details .right ul li.last span {
+.modal.appointment_details .appointment_item > .details ul li.last span {
   font-weight: 600;
 }
 .modal.appointment_details .wrap {
@@ -2157,10 +2225,73 @@ textarea {
 .modal.appointment_details .wrap .left div {
   margin-bottom: 12px;
 }
+.modal.appointment_details.coupons .appointment_item {
+  padding-right: 16px;
+}
+.modal.appointment_details.coupons .appointment_item > .details .left {
+  width: 35%;
+  padding-right: 12px;
+}
+.modal.appointment_details.coupons .appointment_item > .details .right {
+  width: 65%;
+}
+.modal.appointment_details.coupons .appointment_item > .details .right .head span:not(:first-child) {
+  width: 80% !important;
+}
+.modal.appointment_details.coupons .appointment_item > .details .right ul li span:not(:last-child) {
+  width: 40%;
+}
+.modal.appointment_details.coupons .appointment_item > .details .right ul li span:not(:first-child) {
+  text-align: center;
+}
+.modal.appointment_details.coupons .appointment_item > .details .right ul li span:first-child {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.modal.appointment_details.coupons .appointment_item > .details .right ul li span:last-child {
+  width: 40%;
+  text-align: center;
+}
+.modal.appointment_details.active_coupons .appointment_item {
+  padding-right: 16px;
+}
+.modal.appointment_details.active_coupons .appointment_item .wrap {
+  margin-bottom: 20px;
+}
+.modal.appointment_details.active_coupons .appointment_item .right {
+  width: 64%;
+}
+.modal.appointment_details.active_coupons .appointment_item .right .head span {
+  font-size: 10px;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li span:first-child {
+  min-width: 50px;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li span:not(:first-child) {
+  width: 100%;
+  text-align: center;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li.last {
+  margin-top: 0;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li.last:last-child {
+  border-top: unset;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li.last span {
+  min-width: 50%;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li.last span:last-child {
+  text-align: right;
+}
+.modal.appointment_details.active_coupons .appointment_item .right ul li.last strong {
+  font-weight: 600;
+}
 .modal.invoice > .inner {
   width: 410px;
   max-width: 90%;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   overflow: hidden;
 }
@@ -2294,6 +2425,34 @@ textarea {
   display: block;
   margin-bottom: -26px;
 }
+.modal.appointment_booked > .inner {
+  width: 505px;
+  max-width: 95%;
+  text-align: center;
+  padding: 50px 16px;
+  border-radius: 35px;
+}
+.modal.appointment_booked .icon {
+  display: inline-block;
+}
+.modal.appointment_booked .content span {
+  display: block;
+  margin-bottom: 24px;
+}
+.modal.appointment_booked .content h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.modal.appointment_booked .content p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+.modal.appointment_booked .content .btn {
+  padding: 15px 25px;
+  border-radius: 10px;
+}
 .modal.opened {
   opacity: 1;
   visibility: visible;
@@ -2319,6 +2478,16 @@ textarea {
   background-color: rgb(243, 243, 243);
 }
 
+@media (max-width: 991px) {
+  .modal.appointment_details .appointment_item {
+    padding-left: 36px;
+    padding-top: 19px;
+    padding-right: 12px;
+  }
+  .modal.appointment_details .appointment_item::after {
+    width: 22px;
+  }
+}
 .my_reviews.items_grid {
   margin: 0;
 }
