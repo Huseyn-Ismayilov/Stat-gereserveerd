@@ -1,0 +1,20 @@
+.sec_title {
+    h5 {
+        font-size: 14px;
+        color: var(--primary-color);
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+    h1 {
+        font-weight: 400;
+    }
+    p {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
