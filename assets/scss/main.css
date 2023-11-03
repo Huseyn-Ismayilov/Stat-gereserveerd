@@ -1117,6 +1117,10 @@ button.swiper-pagination-bullet {
 }
 .dashboard0 .list_items .inner .btn-group {
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 .dashboard0 .list_items .inner .title h3 {
   font-size: 13px;
@@ -2019,6 +2023,9 @@ textarea {
   font-weight: 600;
   text-decoration: underline;
   color: var(--orange);
+}
+.popup.add_review .scroll {
+  padding-bottom: 30px;
 }
 .popup.settings .tab-nav {
   display: flex;

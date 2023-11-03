@@ -210,6 +210,10 @@
             }
             .btn-group {
                 margin-bottom: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
             }
             .title {
                 h3 {
